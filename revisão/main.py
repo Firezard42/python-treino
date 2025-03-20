@@ -1,1 +1,1 @@
-print ("Quero trabajoooooo !!!!")py
+print('quero trabajo')
