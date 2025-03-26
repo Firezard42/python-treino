@@ -1,29 +1,43 @@
-def decoracao(n):
-    n2 = len(n)+2
+from time import sleep
+
+c = ( '\033[m',  #0 - sem cores
+      '\033[0;41m', #1 vermelho
+        '\033[0;42m', #2 verde
+        '\033[0;43m', #3 amarelo
+        '\033[0;44m', #4 azul
+        '\033[0;45m', #5 roxo
+        '\033[0;46m', #6 ciano
+        '\033[7m') #7 branco
+
+
+def ajuda(n,cor = 0):
+    sleep(0.5)
+    print(c[cor],end='')
+    help(n)
+    print(c[0],end='')
+
+
+def decoracao(n,cor = 0):
+    n2 = len(n)+4
+    sleep(0.5)
+    print(c[cor],end='')
     print('~' * n2)
-    print(n.center(len(n)+2))
+    print(n.center(len(n)+4))
     print('~' * n2)
+    print(c[0],end='')
+    sleep(0.5)
 
 
 while True:
-    print('\033[0;42m')
-    decoracao('SISTEMA DE AJUDA PyHELP')
-    print('')
-    print('\033[m')
-    help1 = str(input('Função ou biblioteca > ')).strip()
+    decoracao('SISTEMA DE AJUDA PyHELP',2)
+    help1 = str(input(f'{c[3]}Função ou biblioteca >{c[0]} ')).strip()
     help2 = help1.upper()
     if help2 == 'FIM':
         break
-    print('\033[0;44m')
-    decoracao(f'Acessando o manual do comando "{help1}"')
-    print('')
-    print('\033[m')
 
-    print('\033[7m')
-    help(help1)
-    print('')
-    print('\033[m')
-print('\033[0;41m')
-decoracao('ATÉ LOGO!')
-print('')
-print('\033[m')
+    decoracao(f'Acessando o manual do comando "{help1}"',4)
+
+    ajuda(help1,7)
+
+
+decoracao('ATÉ LOGO!',1)
