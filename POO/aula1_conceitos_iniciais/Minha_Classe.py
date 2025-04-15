@@ -16,8 +16,9 @@ class MinhaClasse:
         return 'Hello World !!!'
 
     def metodo2(self,numero):
-        self.metodo1() #você pode chamar um metodo dentro do outro, nesse caso isso vai fazer você mostrar o metodo1 mesmo so chamando o metodo2 quando o objeto for realizar a ação.
-        print(self.atributo3[1] + numero)
+        self.metodo1() #você pode chamar um metodo dentro do outro, nesse caso isso vai fazer você mostrar o metodo1 mesmo so chamando o metodo2 quando o objeto for realizar a ação. 
+        #e sempre lembre de usar o self. antes no metodo que vai chamar
+        print(self.atributo3[1] + numero) 
         
 
 #objeto         #classe -> instanciamos o objeto
