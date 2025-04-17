@@ -1,10 +1,9 @@
+from string import punctuation
+
 frase2 = dict()
-frase = 'o rato matheus roeu o queijo do rato estefani'.strip().split()
-frase2['o'] = frase.count('o')
-frase2['rato'] = frase.count('rato')
-frase2['matheus'] = frase.count('matheus')
-frase2['roeu'] = frase.count('roeu')
-frase2['queijo'] = frase.count('queijo')
-frase2['do'] =  frase.count('do')
-frase2['estefani'] = frase.count('estefani')
+frase = str(input('Digite uma frase: ')).strip(punctuation).strip().lower().split()
+for c in range(0,len(frase)):
+    n = frase[c]
+    if frase[c] not in frase2:
+        frase2[frase[c]] = frase.count(n)
 print(frase2)
