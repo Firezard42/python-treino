@@ -1,0 +1,2 @@
+vazio = {}
+print(vazio)
